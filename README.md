@@ -1,1 +1,1 @@
-**Look at the Wiki!**
+**Look at the [Wiki](https://github.com/capyBearista/home-server/wiki)!**
