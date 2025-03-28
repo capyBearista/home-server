@@ -1,0 +1,16 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/New_York
+    volumes:
+      - jellyfin-config:/config
+      - /home/capyBearista/network-share/media:/media
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+volumes:
+  jellyfin-config:

@@ -1,0 +1,73 @@
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+      - "8123:8123"
+    environment:
+      EULA: "TRUE"
+      TYPE: "MODRINTH"
+      VERSION: "LATEST"
+      MODRINTH_MODPACK: "https://modrinth.com/modpack/adrenaline"
+      MODRINTH_ALLOWED_VERSION_TYPE: "beta"
+      MODRINTH_DEFAULT_VERSION_TYPE: "beta"
+      MODRINTH_LOADER: "fabric"
+#      MODS: |-
+#        https://cdn.modrinth.com/data/OhduvhIc/versions/wXrGnwAw/veinminer-fabric-2.3.2.jar
+#        https://cdn.modrinth.com/data/4sP0LXxp/versions/YqKzhrfs/veinminer-enchant-2.2.2.jar
+      MEMORY: "6G"
+      MAX_PLAYERS: "10"
+#      MOTD: "<your own server message>"
+#      ICON: "<image link here>"
+#      TZ: "<timezone>"
+      ENABLE_COMMAND_BLOCK: "true"
+#      ENABLE_WHITELIST: "true"
+#      WHITELIST: |-
+#        username1
+#        username2
+#      SEED: "<custom seed>"
+      SIMULATION_DISTANCE: "6"
+      VIEW_DISTANCE: "24"
+      SPAWN_PROTECTION: "0"
+      SYNC_CHUNK_WRITES: "false"
+#      OPS: |-
+#        <username1>
+      MODRINTH_PROJECTS: |-
+        spark
+        chunky
+        architectury-api
+        balm
+        collective
+        fabric-language-kotlin
+        jamlib
+        alternate-current
+        better-spawner-control
+        bigger-sponge-absorption-radius
+        compact-help-command
+        debugify
+        double-doors
+        enchanting-commands
+        end-portal-recipe
+        fallingtree
+        fastback
+        followers-teleport-too
+        get-it-together-drops
+        indypets
+        inventory-sorting
+        journeymap
+        netherportalfix
+        no-chat-reports
+        rightclickharvest
+        vanilla-refresh
+        village-bell-recipe
+        datapack:cherry-villages
+        datapack:geophilic
+        datapack:waystones-data-pack
+      MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
+      RESOURCE_PACK: "https://modrinth.com/resourcepack/chat-reporting-helper"
+      VANILLATWEAKS_SHARECODE: "FKAFBr\nnH1axA"
+    volumes:
+      - "./data:/data"
+    restart: unless-stopped
