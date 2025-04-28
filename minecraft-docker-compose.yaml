@@ -1,3 +1,4 @@
+# setupmvillage-bell-recipec.com
 services:
   mc:
     image: itzg/minecraft-server:latest
@@ -14,26 +15,24 @@ services:
       MODRINTH_ALLOWED_VERSION_TYPE: "beta"
       MODRINTH_DEFAULT_VERSION_TYPE: "beta"
       MODRINTH_LOADER: "fabric"
-#      MODS: |-
-#        https://cdn.modrinth.com/data/OhduvhIc/versions/wXrGnwAw/veinminer-fabric-2.3.2.jar
-#        https://cdn.modrinth.com/data/4sP0LXxp/versions/YqKzhrfs/veinminer-enchant-2.2.2.jar
       MEMORY: "6G"
       MAX_PLAYERS: "10"
-#      MOTD: "<your own server message>"
-#      ICON: "<image link here>"
-#      TZ: "<timezone>"
+      MOTD: "[SERVER NAME HERE]"
+      ICON: "[IMAGE LINK HERE]"
+      TZ: "[TIMEZONE HERE]"
       ENABLE_COMMAND_BLOCK: "true"
-#      ENABLE_WHITELIST: "true"
-#      WHITELIST: |-
-#        username1
-#        username2
-#      SEED: "<custom seed>"
+      ENABLE_WHITELIST: "true"
+      WHITELIST: |-
+        [PLAYER NAME HERE]
+        [PLAYER NAME HERE]
+        [PLAYER NAME HERE]
+      SEED: "[SEED HERE]"
       SIMULATION_DISTANCE: "6"
       VIEW_DISTANCE: "24"
       SPAWN_PROTECTION: "0"
       SYNC_CHUNK_WRITES: "false"
-#      OPS: |-
-#        <username1>
+      OPS: |-
+        [PLAYER NAME HERE]
       MODRINTH_PROJECTS: |-
         spark
         chunky
@@ -62,6 +61,8 @@ services:
         rightclickharvest
         vanilla-refresh
         village-bell-recipe
+        rei
+        inventory-totem
         datapack:cherry-villages
         datapack:geophilic
         datapack:waystones-data-pack
@@ -70,4 +71,4 @@ services:
       VANILLATWEAKS_SHARECODE: "FKAFBr\nnH1axA"
     volumes:
       - "./data:/data"
-    restart: unless-stopped
+    restart: always
