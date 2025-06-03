@@ -10,15 +10,18 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "MODRINTH"
+      DIFFICULTY: "2"
       VERSION: "LATEST"
       MODRINTH_MODPACK: "https://modrinth.com/modpack/adrenaline"
       MODRINTH_ALLOWED_VERSION_TYPE: "beta"
       MODRINTH_DEFAULT_VERSION_TYPE: "beta"
       MODRINTH_LOADER: "fabric"
-      MEMORY: "6G"
+#      MODS: |-
+#        [LINK TO .JAR FILE HERE]
+      MEMORY: "8G"
       MAX_PLAYERS: "10"
-      MOTD: "[SERVER NAME HERE]"
-      ICON: "[IMAGE LINK HERE]"
+      MOTD: "[SERVER MESSAGE HERE]"
+      ICON: "[LINK TO IMAGE HERE]"
       TZ: "[TIMEZONE HERE]"
       ENABLE_COMMAND_BLOCK: "true"
       ENABLE_WHITELIST: "true"
@@ -27,8 +30,8 @@ services:
         [PLAYER NAME HERE]
         [PLAYER NAME HERE]
       SEED: "[SEED HERE]"
-      SIMULATION_DISTANCE: "6"
-      VIEW_DISTANCE: "24"
+      SIMULATION_DISTANCE: "8"
+      VIEW_DISTANCE: "10"
       SPAWN_PROTECTION: "0"
       SYNC_CHUNK_WRITES: "false"
       OPS: |-
@@ -41,34 +44,56 @@ services:
         collective
         fabric-language-kotlin
         jamlib
+        adjusted-phantom-spawns
         alternate-current
+        anvil-restoration
         better-spawner-control
         bigger-sponge-absorption-radius
         compact-help-command
         debugify
         double-doors
-        enchanting-commands
         end-portal-recipe
-        fallingtree
         fastback
+        fish-on-the-line
+        fixed-anvil-repair-cost
         followers-teleport-too
-        get-it-together-drops
+        grind-enchantments
         indypets
-        inventory-sorting
+        inventory-management
+        inventory-totem
         journeymap
+        merge-enchantments
+        name-tag-tweaks
         netherportalfix
         no-chat-reports
+        our-villager-discounts
+        rei
         rightclickharvest
+        too-cheap
+        too-fast
+        tree-harvester
         vanilla-refresh
         village-bell-recipe
-        rei
-        inventory-totem
-        datapack:cherry-villages
+        villager-converting
+        warden-with-loot
+        datapack:blasting-plus
+        datapack:dungeons+
+        datapack:dungeons-and-taverns-pillager-outpost-overhaul
+        datapack:dungeons-and-taverns-swamp-hut-overhaul
+        datapack:dungeons-and-taverns-jungle-temple-overhaul
+        datapack:dungeons-and-taverns-ocean-monument-overhaul
+        datapack:dungeons-and-taverns-desert-temple-overhaul
+        datapack:enchanted-golden-apple-addition
         datapack:geophilic
+        datapack:leash-villager
+        datapack:mastercutter
+        datapack:refined-advancements
+        datapack:veinminer
+        datapack:veinminer-enchantment
         datapack:waystones-data-pack
       MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
-      RESOURCE_PACK: "https://modrinth.com/resourcepack/chat-reporting-helper"
-      VANILLATWEAKS_SHARECODE: "FKAFBr\nnH1axA"
+      RESOURCE_PACK: "[LINK TO SERVER RESOURCE PACK, OPTIONAL]"
+      VANILLATWEAKS_SHARECODE: "[CODE HERE]\n[CODE HERE]"
     volumes:
       - "./data:/data"
     restart: always
