@@ -8,7 +8,7 @@ services:
       - TZ=America/New_York
     volumes:
       - jellyfin-config:/config
-      - /home/capyBearista/network-share/media:/media
+      - /path/to/your/media:/media
     ports:
       - 8096:8096
     restart: unless-stopped
