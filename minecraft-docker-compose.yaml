@@ -11,31 +11,33 @@ services:
       EULA: "TRUE"
       TYPE: "MODRINTH"
       DIFFICULTY: "2"
-      VERSION: "LATEST"
+      VERSION: "1.21.5"
       MODRINTH_MODPACK: "https://modrinth.com/modpack/adrenaline"
-      MODRINTH_ALLOWED_VERSION_TYPE: "beta"
-      MODRINTH_DEFAULT_VERSION_TYPE: "beta"
+      MODRINTH_ALLOWED_VERSION_TYPE: "alpha"
+      MODRINTH_DEFAULT_VERSION_TYPE: "alpha"
       MODRINTH_LOADER: "fabric"
 #      MODS: |-
 #        [LINK TO .JAR FILE HERE]
       MEMORY: "8G"
       MAX_PLAYERS: "10"
-      MOTD: "[SERVER MESSAGE HERE]"
+      MOTD: "A Special Message!"
       ICON: "[LINK TO IMAGE HERE]"
-      TZ: "[TIMEZONE HERE]"
+      TZ: "America/New_York"
       ENABLE_COMMAND_BLOCK: "true"
       ENABLE_WHITELIST: "true"
       WHITELIST: |-
-        [PLAYER NAME HERE]
-        [PLAYER NAME HERE]
-        [PLAYER NAME HERE]
-      SEED: "[SEED HERE]"
+        player1
+        player2
+        player3
+        player4
+        player5
+      SEED: "69420114477378524"
       SIMULATION_DISTANCE: "8"
       VIEW_DISTANCE: "10"
       SPAWN_PROTECTION: "0"
       SYNC_CHUNK_WRITES: "false"
       OPS: |-
-        [PLAYER NAME HERE]
+        player1
       MODRINTH_PROJECTS: |-
         spark
         chunky
@@ -92,8 +94,7 @@ services:
         datapack:veinminer-enchantment
         datapack:waystones-data-pack
       MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
-      RESOURCE_PACK: "[LINK TO SERVER RESOURCE PACK, OPTIONAL]"
-      VANILLATWEAKS_SHARECODE: "[CODE HERE]\n[CODE HERE]"
+      VANILLATWEAKS_SHARECODE: "your-share-code-here"
     volumes:
       - "./data:/data"
     restart: always
