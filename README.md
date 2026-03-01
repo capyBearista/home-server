@@ -127,9 +127,9 @@ This page holds some of the YAML files I've used to set up services with Docker 
 ## Example Configs
 
 ### 20. example-crowdsec-npmplus.conf
-- **Purpose**: CrowdSec Lua bouncer config for NPMplus — place in `<npmplus-data-dir>/crowdsec/crowdsec.conf`
+- **Purpose**: CrowdSec Lua bouncer config for NPMplus—place in `<npmplus-data-dir>/crowdsec/crowdsec.conf`
 - **Customization needed**:
-  - `API_KEY` — generate with `sudo cscli bouncers add npmplus-bouncer`
+  - `API_KEY`—generate with `sudo cscli bouncers add npmplus-bouncer`
   - Verify `API_URL` and `APPSEC_URL` match your Docker host gateway IP
   - Optionally configure captcha settings (`CAPTCHA_PROVIDER`, `SECRET_KEY`, `SITE_KEY`)
 

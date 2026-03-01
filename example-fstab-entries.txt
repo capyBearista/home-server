@@ -1,10 +1,10 @@
 # Example /etc/fstab entries for a home server
-# These are ADDED to your existing fstab — don't replace the whole file!
+# These are ADDED to your existing fstab—don't replace the whole file!
 
 # Mount an external USB drive at boot
 # Find your UUID with: lsblk -f or blkid
 UUID=YOUR-DRIVE-UUID-HERE /mnt/external_drive ntfs-3g defaults,uid=1000,gid=1000,umask=000,dmask=027,fmask=137 0 0
 
-# Secure /proc — hides process details from other users
+# Secure /proc—hides process details from other users
 # Helps prevent information leakage on multi-user systems
 proc     /proc     proc     defaults,hidepid=2     0     0

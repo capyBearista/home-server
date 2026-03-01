@@ -1,5 +1,5 @@
 #!/bin/bash
-# Scheduled git backup — commits and pushes changes weekly
+# Scheduled git backup—commits and pushes changes weekly
 # Add to crontab: 0 5 * * 0 /path/to/cron-git-backup.sh
 
 USER="your-username"
