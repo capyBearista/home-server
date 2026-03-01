@@ -98,3 +98,8 @@ services:
     volumes:
       - "./data:/data"
     restart: always
+
+networks:
+  default:
+    external: true
+    name: docker_network

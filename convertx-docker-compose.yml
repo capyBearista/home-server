@@ -10,3 +10,8 @@ services:
       - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234 # will use randomUUID() if unset
     volumes:
       - ./data:/app/data
+
+networks:
+  default:
+    external: true
+    name: docker_network

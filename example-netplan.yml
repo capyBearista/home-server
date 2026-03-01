@@ -1,0 +1,17 @@
+# Example Netplan configuration for a static IP on Ubuntu Server
+# File location: /etc/netplan/50-cloud-init.yaml (or similar)
+#
+# Update the interface name, IP, gateway, and DNS to match your network.
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enx000000000000:        # Replace with your interface name (run `ip link` to find it)
+      addresses:
+        - 10.0.0.20/22      # Your desired static IP and subnet mask
+      nameservers:
+        addresses: [1.1.1.1, 1.0.0.1]   # DNS servers (Cloudflare in this example)
+      routes:
+        - to: default
+          via: 10.0.0.1     # Your router/gateway IP

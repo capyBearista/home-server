@@ -1,0 +1,77 @@
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    tty: true
+    stdin_open: true
+    ports:
+      - "25566:25565"
+      # web map port
+      - "8125:8123"
+      - "19132:19132/udp"  # Bedrock players via Geyser
+    environment:
+      EULA: "TRUE"
+      TYPE: "MODRINTH"
+      VERSION: "LATEST"
+      MODRINTH_MODPACK: "https://modrinth.com/modpack/adrenaline"
+      MODRINTH_DEFAULT_VERSION_TYPE: "alpha"
+      MODRINTH_LOADER: "fabric"
+      MEMORY: "6144M"
+      MAX_PLAYERS: "10"
+      MOTD: "Your Server Message Here"
+      USE_MEOWICE_FLAGS: "true"
+      TZ: "America/New_York"
+      DIFFICULTY: "2"
+      ENABLE_COMMAND_BLOCK: "true"
+      VIEW_DISTANCE: "16"
+      SEED: "your-world-seed"
+      LEVEL: "your-world-name"
+      OPS: |-
+        player1
+        player2
+      ENABLE_WHITELIST: "true"
+      WHITELIST: |-
+        player1
+        player2
+      MODRINTH_PROJECTS: |-
+        fabric-api
+        lithium
+        geyser
+        floodgate
+        alternate-current
+        anvil-restoration
+        better-spawner-control
+        bigger-sponge-absorption-radius
+        chunky
+        compact-help-command
+        distanthorizons
+        double-doors
+        fish-on-the-line
+        fixed-anvil-repair-cost
+        followers-teleport-too
+        grind-enchantments
+        indypets
+        inventory-management
+        inventory-totem
+        jei
+        journeymap
+        name-tag-tweaks
+        netherportalfix
+        rightclickharvest
+        too-cheap
+        vanilla-refresh
+        village-bell-recipe
+        villager-converting
+        datapack:dungeons-and-taverns-pillager-outpost-overhaul
+        datapack:dungeons-and-taverns-swamp-hut-overhaul
+        datapack:dungeons-and-taverns-jungle-temple-overhaul
+        datapack:dungeons-and-taverns-ocean-monument-overhaul
+        datapack:dungeons-and-taverns-desert-temple-overhaul
+        datapack:veinminer
+        datapack:veinminer-enchantment
+        datapack:waystones-data-pack
+      MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
+      MODRINTH_ALLOWED_VERSION_TYPE: "alpha"
+      VANILLATWEAKS_SHARECODE: "your-share-code-here"
+      LOG_TIMESTAMP: "true"
+    volumes:
+      - "./data:/data"

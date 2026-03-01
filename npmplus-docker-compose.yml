@@ -1,0 +1,45 @@
+services:
+  npmplus:
+    container_name: npmplus
+    image: 'docker.io/zoeyvid/npmplus:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+      - '81:81'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      TZ: "America/New_York"
+      LOGROTATE: "true"
+      DB_MYSQL_HOST: "db"
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: "npm"
+      DB_MYSQL_PASSWORD: "your-db-password"
+      DB_MYSQL_NAME: "npm"
+    volumes:
+      - ./data:/data
+    depends_on:
+      - db
+    networks:
+      - docker_network
+
+  db:
+    container_name: npmplus-db
+    image: 'jc21/mariadb-aria:latest'
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'your-root-password'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'your-db-password'
+      MARIADB_AUTO_UPGRADE: '1'
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - docker_network
+
+networks:
+  docker_network:
+    external: true

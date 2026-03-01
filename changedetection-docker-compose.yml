@@ -1,0 +1,24 @@
+services:
+  changedetection:
+    image: dgtlmoon/changedetection.io:latest
+    container_name: changedetection
+    restart: unless-stopped
+    environment:
+      - TZ=America/New_York
+      - PLAYWRIGHT_DRIVER_URL=ws://sockpuppetbrowser:3000
+      - BASE_URL=http://your-server-ip:5000
+      - FETCH_WORKERS=4
+    volumes:
+      - ./datastore:/datastore
+    ports:
+      - "5000:5000"
+    depends_on:
+      - sockpuppetbrowser
+
+  sockpuppetbrowser:
+    image: dgtlmoon/sockpuppetbrowser:latest
+    container_name: sockpuppetbrowser
+    restart: unless-stopped
+    shm_size: 2gb
+    environment:
+      - DEFAULT_LAUNCH_ARGS=["--window-size=1920,1080"]

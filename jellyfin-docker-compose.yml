@@ -12,5 +12,11 @@ services:
     ports:
       - 8096:8096
     restart: unless-stopped
+
 volumes:
   jellyfin-config:
+
+networks:
+  default:
+    external: true
+    name: docker_network

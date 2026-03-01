@@ -1,0 +1,28 @@
+services:
+  backrest:
+    image: ghcr.io/garethgeorge/backrest:latest
+    container_name: backrest
+    restart: unless-stopped
+    ports:
+      - "9898:9898"
+    environment:
+      - BACKREST_PORT=0.0.0.0:9898
+      - XDG_CACHE_HOME=/cache
+      - TZ=America/New_York
+    volumes:
+      # Backrest Config & Metadata
+      - ./data:/data
+      - ./config:/config
+      - ./cache:/cache
+      - ./tmp:/tmp
+
+      # SOURCE: What is being backed up (read-only)
+      - /path/to/your/data:/userdata/my-data:ro
+
+      # DESTINATION: Where the backup repo lives
+      - /path/to/your/backup-drive:/repos/my-backup
+
+networks:
+  default:
+    external: true
+    name: docker_network
